@@ -1,6 +1,6 @@
 package com.openpayd.foreignexchange.api.controller;
 
-import com.openpayd.foreignexchange.api.gateaway.response.RatesApiResponse;
+import com.openpayd.foreignexchange.api.controller.response.GetExchangeRateResponse;
 import com.openpayd.foreignexchange.api.service.ExchangeRateService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,12 +19,12 @@ import java.util.List;
 @RequestMapping("exchange-rate")
 public class ExchangeRateController {
 
-    private final ExchangeRateService exchangeRateService;
+    ExchangeRateService exchangeRateService;
 
     @GetMapping
-    public ResponseEntity<RatesApiResponse> getExchangeRate(@RequestParam Currency base,
-                                                            @RequestParam List<Currency> symbols) {
-        return ResponseEntity.ok(exchangeRateService.getExchangeRates(base, symbols));
+    public ResponseEntity<GetExchangeRateResponse> getExchangeRate(@RequestParam Currency base,
+                                                                   @RequestParam List<Currency> symbols) {
+        return ResponseEntity.ok(exchangeRateService.getRates(base, symbols));
     }
 
     @GetMapping(value = "/healthCheck")

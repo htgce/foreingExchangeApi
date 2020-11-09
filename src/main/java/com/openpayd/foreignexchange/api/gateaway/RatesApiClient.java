@@ -1,19 +1,27 @@
 package com.openpayd.foreignexchange.api.gateaway;
 
-import com.openpayd.foreignexchange.api.gateaway.response.RatesApiResponse;
-import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import com.openpayd.foreignexchange.api.controller.request.GetExchangeRateRequest;
+import com.openpayd.foreignexchange.api.controller.response.GetExchangeRateResponse;
+import feign.Feign.Builder;
 
-import java.util.Currency;
-import java.util.List;
+public class RatesApiClient {
 
-@FeignClient(value = "rates-service", url = "https://api.ratesapi.io/")
-public interface RatesApiClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "api/latest", produces = "application/json")
-    RatesApiResponse getRates(@RequestParam("base") Currency base,
-                              @RequestParam("symbols") List<Currency> symbols);
+    private static RatesApiClient instance;
+    private final RatesApi ratesApi;
 
+    private RatesApiClient(String ratesApiUrl, Builder builder) {
+        ratesApi = builder.target(RatesApi.class, ratesApiUrl);
+    }
+
+    public static RatesApiClient getInstance(String ratesApiUrl, Builder builder) {
+        if (instance == null) {
+            instance = new RatesApiClient(ratesApiUrl, builder);
+        }
+        return instance;
+    }
+
+    public GetExchangeRateResponse getRates(GetExchangeRateRequest request) {
+        return ratesApi.getRates(request.getBase(), request.getSymbols());
+    }
 }

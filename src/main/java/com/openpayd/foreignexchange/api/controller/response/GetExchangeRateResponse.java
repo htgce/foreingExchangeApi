@@ -1,4 +1,4 @@
-package com.openpayd.foreignexchange.api.gateaway.response;
+package com.openpayd.foreignexchange.api.controller.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,10 +14,8 @@ import java.util.Map;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class RatesApiResponse {
-
+public class GetExchangeRateResponse {
     private Currency base;
     private Map<Currency, BigDecimal> rates;
     private LocalDate date;
-
 }
