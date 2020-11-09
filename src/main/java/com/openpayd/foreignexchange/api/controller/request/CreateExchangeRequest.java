@@ -1,9 +1,6 @@
 package com.openpayd.foreignexchange.api.controller.request;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.util.Currency;
@@ -12,6 +9,8 @@ import java.util.Currency;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 public class CreateExchangeRequest {
     private Currency base;
     private Currency target;

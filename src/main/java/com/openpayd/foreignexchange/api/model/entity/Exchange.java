@@ -1,11 +1,10 @@
 package com.openpayd.foreignexchange.api.model.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -17,16 +16,18 @@ import java.util.Currency;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 public class Exchange {
     @Id
-    private String exchangeTransactionId;
-    private LocalDate date;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long transactionId;
+    private LocalDate exchangeRateDate;
     private Currency base;
     private Currency target;
     private BigDecimal rate;
     private BigDecimal amount;
     private BigDecimal calculated;
     private LocalDateTime transactionDate;
-    private String id;
 
 }
