@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Arrays;
+import java.util.Collections;
 
 @Service
 @AllArgsConstructor
@@ -24,7 +24,7 @@ public class ExchangeServiceImpl implements ExchangeService {
 
     @Override
     public CreateExchangeResponse createExchange(CreateExchangeRequest createExchangeRequest) {
-        GetExchangeRateResponse exchangeRateResponse = exchangeRateService.getRates(createExchangeRequest.getBase(), Arrays.asList(createExchangeRequest.getTarget()));
+        GetExchangeRateResponse exchangeRateResponse = exchangeRateService.getRates(createExchangeRequest.getBase(), Collections.singletonList(createExchangeRequest.getTarget()));
 
         LocalDate currentExchangeRateDate = exchangeRateResponse.getDate();
         BigDecimal currentExchangeRate = exchangeRateResponse.getRates().get(createExchangeRequest.getTarget());
