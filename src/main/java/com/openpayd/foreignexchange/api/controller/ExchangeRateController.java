@@ -19,11 +19,17 @@ import java.util.List;
 @RequestMapping("exchange-rate")
 public class ExchangeRateController {
 
-    private ExchangeRateService exchangeRateService;
+    private final ExchangeRateService exchangeRateService;
 
     @GetMapping
     public ResponseEntity<RatesApiResponse> getExchangeRate(@RequestParam Currency base,
                                                             @RequestParam List<Currency> symbols) {
         return ResponseEntity.ok(exchangeRateService.getExchangeRates(base, symbols));
     }
+
+    @GetMapping(value = "/healthCheck")
+    public ResponseEntity<String> healthCheck() {
+        return ResponseEntity.ok("Exchange Rate Api working fine !");
+    }
+
 }
