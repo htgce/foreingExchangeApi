@@ -1,6 +1,9 @@
-package com.openpayd.foreignexchange.api.controller.response;
+package com.openpayd.foreignexchange.api.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
@@ -8,8 +11,6 @@ import java.math.BigDecimal;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
 public class CreateExchangeResponse {
     private BigDecimal amount;
     private BigDecimal calculated;

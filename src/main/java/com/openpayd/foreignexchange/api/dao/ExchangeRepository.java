@@ -1,6 +1,5 @@
 package com.openpayd.foreignexchange.api.dao;
 
-import com.openpayd.foreignexchange.api.model.entity.Exchange;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

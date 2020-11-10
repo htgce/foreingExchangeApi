@@ -1,8 +1,8 @@
 package com.openpayd.foreignexchange.api.controller;
 
-import com.openpayd.foreignexchange.api.controller.request.CreateExchangeRequest;
-import com.openpayd.foreignexchange.api.controller.response.CreateExchangeResponse;
-import com.openpayd.foreignexchange.api.model.dto.ExchangeDto;
+import com.openpayd.foreignexchange.api.dto.CreateExchangeRequest;
+import com.openpayd.foreignexchange.api.dto.CreateExchangeResponse;
+import com.openpayd.foreignexchange.api.dto.ExchangeDto;
 import com.openpayd.foreignexchange.api.service.ExchangeService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

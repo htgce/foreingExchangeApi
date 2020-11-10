@@ -1,12 +1,12 @@
 package com.openpayd.foreignexchange.api.service;
 
-import com.openpayd.foreignexchange.api.controller.request.CreateExchangeRequest;
-import com.openpayd.foreignexchange.api.controller.response.CreateExchangeResponse;
-import com.openpayd.foreignexchange.api.controller.response.GetExchangeRateResponse;
+import com.openpayd.foreignexchange.api.dao.Exchange;
 import com.openpayd.foreignexchange.api.dao.ExchangeRepository;
+import com.openpayd.foreignexchange.api.dto.CreateExchangeRequest;
+import com.openpayd.foreignexchange.api.dto.CreateExchangeResponse;
+import com.openpayd.foreignexchange.api.dto.ExchangeDto;
+import com.openpayd.foreignexchange.api.dto.GetExchangeRateResponse;
 import com.openpayd.foreignexchange.api.mapper.ExchangeMapper;
-import com.openpayd.foreignexchange.api.model.dto.ExchangeDto;
-import com.openpayd.foreignexchange.api.model.entity.Exchange;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

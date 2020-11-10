@@ -1,6 +1,6 @@
 package com.openpayd.foreignexchange.api.controller;
 
-import com.openpayd.foreignexchange.api.controller.response.GetExchangeRateResponse;
+import com.openpayd.foreignexchange.api.dto.GetExchangeRateResponse;
 import com.openpayd.foreignexchange.api.service.ExchangeRateService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

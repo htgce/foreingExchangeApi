@@ -1,8 +1,8 @@
 package com.openpayd.foreignexchange.api.service;
 
-import com.openpayd.foreignexchange.api.controller.request.CreateExchangeRequest;
-import com.openpayd.foreignexchange.api.controller.response.CreateExchangeResponse;
-import com.openpayd.foreignexchange.api.model.dto.ExchangeDto;
+import com.openpayd.foreignexchange.api.dto.CreateExchangeRequest;
+import com.openpayd.foreignexchange.api.dto.CreateExchangeResponse;
+import com.openpayd.foreignexchange.api.dto.ExchangeDto;
 import org.springframework.data.domain.Page;
 
 import java.time.LocalDateTime;

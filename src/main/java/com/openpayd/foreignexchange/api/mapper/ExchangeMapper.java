@@ -1,8 +1,8 @@
 package com.openpayd.foreignexchange.api.mapper;
 
-import com.openpayd.foreignexchange.api.controller.response.CreateExchangeResponse;
-import com.openpayd.foreignexchange.api.model.dto.ExchangeDto;
-import com.openpayd.foreignexchange.api.model.entity.Exchange;
+import com.openpayd.foreignexchange.api.dao.Exchange;
+import com.openpayd.foreignexchange.api.dto.CreateExchangeResponse;
+import com.openpayd.foreignexchange.api.dto.ExchangeDto;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

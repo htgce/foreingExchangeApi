@@ -1,8 +1,8 @@
 package com.openpayd.foreignexchange.api.service;
 
-import com.openpayd.foreignexchange.api.controller.request.GetExchangeRateRequest;
-import com.openpayd.foreignexchange.api.controller.response.GetExchangeRateResponse;
-import com.openpayd.foreignexchange.api.gateaway.RatesApiClient;
+import com.openpayd.foreignexchange.api.dto.GetExchangeRateRequest;
+import com.openpayd.foreignexchange.api.dto.GetExchangeRateResponse;
+import com.openpayd.foreignexchange.api.gateway.RatesApiClient;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

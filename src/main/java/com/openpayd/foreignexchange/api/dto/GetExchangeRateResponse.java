@@ -1,4 +1,4 @@
-package com.openpayd.foreignexchange.api.controller.response;
+package com.openpayd.foreignexchange.api.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

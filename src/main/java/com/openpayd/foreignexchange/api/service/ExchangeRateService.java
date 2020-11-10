@@ -1,6 +1,6 @@
 package com.openpayd.foreignexchange.api.service;
 
-import com.openpayd.foreignexchange.api.controller.response.GetExchangeRateResponse;
+import com.openpayd.foreignexchange.api.dto.GetExchangeRateResponse;
 
 import java.util.Currency;
 import java.util.List;

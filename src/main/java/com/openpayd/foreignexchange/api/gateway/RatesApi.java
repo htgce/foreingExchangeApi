@@ -1,6 +1,6 @@
-package com.openpayd.foreignexchange.api.gateaway;
+package com.openpayd.foreignexchange.api.gateway;
 
-import com.openpayd.foreignexchange.api.controller.response.GetExchangeRateResponse;
+import com.openpayd.foreignexchange.api.dto.GetExchangeRateResponse;
 import feign.Param;
 import feign.RequestLine;
 import org.springframework.cloud.openfeign.FeignClient;

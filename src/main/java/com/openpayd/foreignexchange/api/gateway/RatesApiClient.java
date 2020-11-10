@@ -1,7 +1,7 @@
-package com.openpayd.foreignexchange.api.gateaway;
+package com.openpayd.foreignexchange.api.gateway;
 
-import com.openpayd.foreignexchange.api.controller.request.GetExchangeRateRequest;
-import com.openpayd.foreignexchange.api.controller.response.GetExchangeRateResponse;
+import com.openpayd.foreignexchange.api.dto.GetExchangeRateRequest;
+import com.openpayd.foreignexchange.api.dto.GetExchangeRateResponse;
 import feign.Feign.Builder;
 
 public class RatesApiClient {

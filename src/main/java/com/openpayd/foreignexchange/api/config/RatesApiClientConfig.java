@@ -1,7 +1,7 @@
 package com.openpayd.foreignexchange.api.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.openpayd.foreignexchange.api.gateaway.RatesApiClient;
+import com.openpayd.foreignexchange.api.gateway.RatesApiClient;
 import feign.Feign;
 import feign.Logger;
 import feign.httpclient.ApacheHttpClient;

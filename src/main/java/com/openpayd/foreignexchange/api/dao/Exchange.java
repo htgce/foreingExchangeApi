@@ -1,4 +1,4 @@
-package com.openpayd.foreignexchange.api.model.entity;
+package com.openpayd.foreignexchange.api.dao;
 
 import lombok.*;
 
@@ -12,7 +12,6 @@ import java.time.LocalDateTime;
 import java.util.Currency;
 
 @Entity
-@Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
