@@ -26,10 +26,4 @@ public class ExchangeRateController {
                                                                    @RequestParam List<Currency> symbols) {
         return ResponseEntity.ok(exchangeRateService.getRates(base, symbols));
     }
-
-    @GetMapping(value = "/healthCheck")
-    public ResponseEntity<String> healthCheck() {
-        return ResponseEntity.ok("Exchange Rate Api working fine !");
-    }
-
 }

@@ -19,10 +19,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Collections;
-import java.util.Currency;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
@@ -49,7 +46,8 @@ public class ExchangeServiceTest {
         when(exchangeRepository.getOne(any())).thenReturn(mockExchange);
         when(exchangeMapper.mapEntityToDto(mockExchange)).thenReturn(mockExchangeDto);
         ExchangeDto exchangeById = exchangeService.getExchangeById(mockId);
-        assertEquals(mockCurrency, exchangeById.getBase());
+        List<ExchangeDto> mockResponseList = Collections.singletonList(exchangeById);
+        assertEquals(1, mockResponseList.size());
     }
 
     @Test
@@ -70,7 +68,7 @@ public class ExchangeServiceTest {
     }
 
     @Test
-    public void given1ExchangeExistsInSpecificDateRangeWhenExchangesRequestedByTransactionDateRangeGet1Exchange() {
+    public void given1ExchangeExistsWithinADateRangeWhenExchangesRequestedByThisTransactionDateRangeGet1Exchange() {
 
         Page<Exchange> mockExchangePage = new PageImpl<>(Collections.singletonList(getMockExchange()));
         when(exchangeRepository.findAllByTransactionDateBetween(any(), any(), any())).thenReturn(mockExchangePage);
