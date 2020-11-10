@@ -45,7 +45,6 @@ public class ExceptionHandlingControllerAdvice {
         error.setViolations(Collections.singletonList(violation));
         return error;
     }
-
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ResponseBody

@@ -6,10 +6,10 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @EnableFeignClients
 @SpringBootApplication
-public class ForeignExhangeApiApplication {
+public class ForeignExchangeApiApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ForeignExhangeApiApplication.class, args);
+        SpringApplication.run(ForeignExchangeApiApplication.class, args);
     }
 
 }

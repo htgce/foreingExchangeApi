@@ -30,7 +30,7 @@ public class ExchangeController {
         return ResponseEntity.ok(exchangeService.getExchangeById(id));
     }
 
-    @GetMapping("begin-date/{begin-date}/end-date/{end-date}")
+    @GetMapping("{begin-date}/{end-date}")
     public ResponseEntity<Page<ExchangeDto>> getExchangesBetweenDates(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "3") int size,
