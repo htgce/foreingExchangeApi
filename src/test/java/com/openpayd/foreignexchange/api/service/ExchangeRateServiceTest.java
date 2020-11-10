@@ -2,9 +2,7 @@ package com.openpayd.foreignexchange.api.service;
 
 import com.openpayd.foreignexchange.api.dto.GetExchangeRateRequest;
 import com.openpayd.foreignexchange.api.dto.GetExchangeRateResponse;
-import com.openpayd.foreignexchange.api.gateway.RatesApi;
 import com.openpayd.foreignexchange.api.gateway.RatesApiClient;
-import com.openpayd.foreignexchange.api.mapper.ExchangeMapper;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,12 +23,10 @@ import static org.mockito.Mockito.when;
 public class ExchangeRateServiceTest {
     @Mock
     GetExchangeRateRequest.GetExchangeRateRequestBuilder mockBuilder;
+
     @Mock
     private RatesApiClient ratesApiClient;
-    @Mock
-    private RatesApi ratesApi;
-    @Mock
-    private ExchangeMapper exchangeMapper;
+
     @InjectMocks
     private ExchangeRateServiceImpl exchangeRateService;
 

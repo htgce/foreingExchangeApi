@@ -10,5 +10,4 @@ import java.time.LocalDateTime;
 @Repository
 public interface ExchangeRepository extends JpaRepository<Exchange, Long> {
     Page<Exchange> findAllByTransactionDateBetween(LocalDateTime beginDate, LocalDateTime endDate, Pageable pageable);
-
 }
