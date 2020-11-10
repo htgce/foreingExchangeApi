@@ -5,8 +5,11 @@ import com.openpayd.foreignexchange.api.controller.response.CreateExchangeRespon
 import com.openpayd.foreignexchange.api.controller.response.GetExchangeRateResponse;
 import com.openpayd.foreignexchange.api.dao.ExchangeRepository;
 import com.openpayd.foreignexchange.api.mapper.ExchangeMapper;
+import com.openpayd.foreignexchange.api.model.dto.ExchangeDto;
 import com.openpayd.foreignexchange.api.model.entity.Exchange;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -31,6 +34,17 @@ public class ExchangeServiceImpl implements ExchangeService {
 
         Exchange currentExchange = getCalculatedExchange(createExchangeRequest, currentExchangeRate, currentExchangeRateDate);
         return mapper.mapEntityToCreateExchangeResponse(repository.save(currentExchange));
+    }
+
+    @Override
+    public ExchangeDto getExchangeById(String id) {
+        return mapper.mapEntityToDto(repository.getOne(Long.parseLong(id)));
+    }
+
+    @Override
+    public Page<ExchangeDto> getAllExchangeByTransactionDateBetween(LocalDateTime beginDate, LocalDateTime endDate, int page, int size) {
+        Page<Exchange> exchangesByTransDateBetween = repository.findAllByTransactionDateBetween(beginDate, endDate, PageRequest.of(page, size));
+        return exchangesByTransDateBetween.map(mapper::mapEntityToDto);
     }
 
     private Exchange getCalculatedExchange(CreateExchangeRequest request, BigDecimal rate, LocalDate currentExchangeRateDate) {
