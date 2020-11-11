@@ -1,0 +1,109 @@
+{
+  "info": {
+    "_postman_id": "6b50e3b8-4c26-4ed2-a356-5a7df7981c9f",
+    "name": "foreignExchangeApi",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "exchange-rate",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/exchange-rate?base=EUR&symbols=USD",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "exchange-rate"
+          ],
+          "query": [
+            {
+              "key": "base",
+              "value": "EUR"
+            },
+            {
+              "key": "symbols",
+              "value": "USD"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "exchange/{beginDate}/{endDate}",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/exchange/2020-11-10T02:02:19.266/2020-11-12T02:02:19.266",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "exchange",
+            "2020-11-10T02:02:19.266",
+            "2020-11-12T02:02:19.266"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "exchange",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"base\": \"EUR\",\r\n    \"amount\": 60,\r\n    \"target\" : \"USD\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/exchange",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "exchange"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "exchange/1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/exchange/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "exchange",
+            "1"
+          ]
+        },
+        "description": "exchange/{id}"
+      },
+      "response": []
+    }
+  ],
+  "protocolProfileBehavior": {}
+}
